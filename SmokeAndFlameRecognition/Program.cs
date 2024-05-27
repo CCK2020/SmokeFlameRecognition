@@ -49,7 +49,7 @@ namespace SmokeAndFlameRecognition
             }
             else
             {
-                programConfig = JsonSerializer.Deserialize<ProgramConfig>(File.ReadAllText(configPath));
+                programConfig = JsonSerializer.Deserialize<ProgramConfig>(File.ReadAllText(configPath)); 
                 yolo = YoloV8Predictor.Create($"{Directory.GetCurrentDirectory()}\\onnx\\{programConfig.OnnxName}.onnx", programConfig.DetectionType.Split(','), false);
             }
             try
